@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "id": "cortexos",
+      "name": "CortexOS · 组织品牌",
+      "sources": [
+        {
+          "url": "https://github.com/cortexos-dev",
+          "label": "用户指定组织；初始未设自定义组织展示"
+        },
+        {
+          "url": "https://github.com/cortexos-dev/cs-mcp",
+          "label": "当前唯一公开产品；CLI 能力发现与 MCP 接入"
+        }
+      ],
+      "tokens": {
+        "primary": "#1D4ED8",
+        "accent": "#0284C7",
+        "secondary": "#2563EB",
+        "onLight": "#1D4ED8",
+        "onDark": "#F8FAFC",
+        "background": "transparent",
+        "darkPrimary": "#3B82F6",
+        "darkAccent": "#38BDF8",
+        "darkSecondary": "#60A5FA"
+      },
+      "tokenSources": {
+        "primary": "本次建议：浅底钴蓝主弧，非既有生产规范",
+        "accent": "本次建议：浅底青蓝辅助弧",
+        "secondary": "本次建议：第三段蓝色弧线",
+        "onLight": "本次建议：浅底中心点，沿用 primary",
+        "onDark": "本次建议：深底中心点，近白色",
+        "background": "本次建议：可复用符号透明画布；头像背景独立处理",
+        "darkPrimary": "本次建议：深底增强亮度的主弧",
+        "darkAccent": "本次建议：深底青色辅助弧",
+        "darkSecondary": "本次建议：深底第三段弧线"
+      },
+      "rationale": [
+        "本次解释：三段弧线围绕共同中心，表达工具连接与协作上下文；不是沿袭已有品牌历史。",
+        "256×256 正方网格，约四分之三的主体跨度；去掉小尺寸难辨的节点与装饰。"
+      ],
+      "userDecisions": [
+        "用户要求处理 cortexos-dev 的组织门面、项目介绍及缺失的 logo。"
+      ],
+      "recommendations": [
+        "以三段环形符号作为主标识，组织头像使用独立深色底。",
+        "以32px作为本次验证下限；16px、色觉模拟和任意彩色底暂未验收。"
+      ],
+      "asset": "mark.svg",
+      "darkAsset": "mark-dark.svg",
+      "oldAsset": null
+    }
+  ]
+}

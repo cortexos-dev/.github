@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CortexOS avatar">
+<title>CortexOS GitHub avatar</title>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0F172A"/><stop offset="1" stop-color="#0D1117"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<g transform="translate(64 64) scale(1.5)"><path d="M62 108C66 68 102 40 148 40C182 40 208 58 222 84C214 88 202 90 192 84C180 66 162 58 144 58C114 58 88 78 82 108Z" fill="#38BDF8"/><path d="M222 84C230 114 226 154 198 184C172 212 134 220 96 212C102 198 114 190 126 194C150 198 176 192 192 172C210 148 212 118 204 94Z" fill="#3B82F6"/><path d="M96 212C60 200 36 166 36 128C36 100 48 76 68 58C74 68 84 76 78 88C66 100 56 114 56 128C56 156 74 182 104 192Z" fill="#60A5FA"/><circle cx="128" cy="128" r="15" fill="#F8FAFC"/></g></svg>
