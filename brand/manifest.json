@@ -1,54 +1,91 @@
 {
+  "_doc": "CortexOS 组织品牌素材的唯一真源说明。颜色与形态全部来自 CortexOS 手机端（cs-app）的标识资产，不是另起炉灶的设计稿：标记本体的路径与配色逐条对应 cs-app/client/design/logo/logo-mark.svg，配色可追溯到 cs-app/client/lib/theme.dart 的 AppTokens。",
+  "sourceOfTruth": {
+    "product": "CortexOS 手机端（cs-app）",
+    "markAsset": "cs-app/client/design/logo/logo-mark.svg",
+    "darkAsset": "cs-app/client/design/logo/adaptive-foreground.svg + adaptive-background.svg",
+    "generator": "cs-app/client/design/logo/build_logo.py（几何与配色的唯一生成源）",
+    "tokensFile": "cs-app/client/lib/theme.dart（AppTokens）",
+    "note": "本仓的 mark/mark-dark/avatar/hero 均为上述资产的应用版本；如需改形状或配色，先改 cs-app 真源并重跑 build_logo.py，再同步到本仓。"
+  },
+  "tokens": {
+    "core": "#EFF4F7",
+    "sage": "#B5B8AF",
+    "clay": "#C4B4A4",
+    "petal": "#C1B5B3",
+    "surfaceLow": "#FBFDFE",
+    "surfaceHigh": "#E5EBEF",
+    "surfaceHighest": "#D7DFE5",
+    "outline": "#5F6B74",
+    "textPrimary": "#19232A",
+    "primary": "#34698C",
+    "mistPigment": "#A9A6E4",
+    "lavenderPigment": "#A89BA3",
+    "sagePigment": "#A8B09A",
+    "petalPigment": "#C4A8A4",
+    "clayPigment": "#C4A07C",
+    "onDark": "#F4F7F8"
+  },
+  "tokenSources": {
+    "core": "build_logo.py 的 CORE 常量：近白、带一点主题雾蓝底相（AppTokens 未单列该字段，是标识专用的核心色）",
+    "sage": "AppTokens.sage.readable（#656C58）朝白提亮 ARC_LIFT=0.52 的结果 —— build_logo.py: lift(SAGE_READ, ARC_LIFT)",
+    "clay": "AppTokens.clay.readable（#856341）朝白提亮 ARC_LIFT=0.52 的结果 —— build_logo.py: lift(CLAY_READ, ARC_LIFT)",
+    "petal": "AppTokens.petal.readable（#7D6460）朝白提亮 ARC_LIFT=0.52 的结果 —— build_logo.py: lift(PETAL_READ, ARC_LIFT)",
+    "surfaceLow": "AppTokens.surfaceContainerLow",
+    "surfaceHigh": "AppTokens.surfaceContainerHigh",
+    "surfaceHighest": "AppTokens.surfaceContainerHighest",
+    "outline": "AppTokens.outline",
+    "textPrimary": "AppTokens.textPrimary",
+    "primary": "AppTokens.primary（黛蓝）",
+    "mistPigment": "AppTokens.mist.pigment",
+    "lavenderPigment": "AppTokens.lavender.pigment",
+    "sagePigment": "AppTokens.sage.pigment",
+    "petalPigment": "AppTokens.petal.pigment",
+    "clayPigment": "AppTokens.clay.pigment",
+    "onDark": "深底文字色，取核心色系（近白雾蓝），用于 hero 副标题与字标"
+  },
+  "colorSystem": {
+    "dualTrack": "AppTokens 双轨制：标记（弧、核心）是「图标」，走可读轨（readable，pigment 压暗到过 WCAG AA）；底面是「氛围渐变」，走气质轨（pigment 低 alpha 叠加，等价于 MorandiFamily.tintOn）。",
+    "arcLift": 0.52,
+    "arcLiftNote": "弧线颜色不是另挑的色板，而是各自 readable 色朝白提亮 0.52 的实算结果（build_logo.py 的 ARC_LIFT）。"
+  },
+  "geometry": {
+    "grid": "108 单位品牌栅格（与 Android adaptive-icon 栅格一致），中心 (54, 54)",
+    "coreRadius": 8.5,
+    "arcRadius": 22.0,
+    "arcWidth": 10.5,
+    "arcSpanDeg": 78.0,
+    "symmetry": "三段弧 120° 旋转对称，三段之间各留 42° 缺口（24px 下缺口仍能分开）",
+    "markScale": "mark.svg 用 scale 1.25；深底/头像用 adaptive 规范的 scale 1.1（标记内缩在安全区内）"
+  },
   "projects": [
     {
-      "id": "cortexos",
-      "name": "CortexOS · 组织品牌",
-      "sources": [
-        {
-          "url": "https://github.com/cortexos-dev",
-          "label": "用户指定组织；初始未设自定义组织展示"
-        },
-        {
-          "url": "https://github.com/cortexos-dev/cs-mcp",
-          "label": "当前唯一公开产品；CLI 能力发现与 MCP 接入"
-        }
-      ],
-      "tokens": {
-        "primary": "#1D4ED8",
-        "accent": "#0284C7",
-        "secondary": "#2563EB",
-        "onLight": "#1D4ED8",
-        "onDark": "#F8FAFC",
-        "background": "transparent",
-        "darkPrimary": "#3B82F6",
-        "darkAccent": "#38BDF8",
-        "darkSecondary": "#60A5FA"
-      },
-      "tokenSources": {
-        "primary": "本次建议：浅底钴蓝主弧，非既有生产规范",
-        "accent": "本次建议：浅底青蓝辅助弧",
-        "secondary": "本次建议：第三段蓝色弧线",
-        "onLight": "本次建议：浅底中心点，沿用 primary",
-        "onDark": "本次建议：深底中心点，近白色",
-        "background": "本次建议：可复用符号透明画布；头像背景独立处理",
-        "darkPrimary": "本次建议：深底增强亮度的主弧",
-        "darkAccent": "本次建议：深底青色辅助弧",
-        "darkSecondary": "本次建议：深底第三段弧线"
-      },
-      "rationale": [
-        "本次解释：三段弧线围绕共同中心，表达工具连接与协作上下文；不是沿袭已有品牌历史。",
-        "256×256 正方网格，约四分之三的主体跨度；去掉小尺寸难辨的节点与装饰。"
-      ],
-      "userDecisions": [
-        "用户要求处理 cortexos-dev 的组织门面、项目介绍及缺失的 logo。"
-      ],
-      "recommendations": [
-        "以三段环形符号作为主标识，组织头像使用独立深色底。",
-        "以32px作为本次验证下限；16px、色觉模拟和任意彩色底暂未验收。"
-      ],
-      "asset": "mark.svg",
-      "darkAsset": "mark-dark.svg",
-      "oldAsset": null
+      "id": "cs-ui-web",
+      "name": "CortexOS 工作台（网页 + Mac app）",
+      "url": "https://github.com/cortexos-dev/cs-ui-web",
+      "position": "电脑端工作台：Agent 与人共用的控制面，任务、看板与消息在同一处收敛。",
+      "logoSource": "cs-app/client/design/logo"
+    },
+    {
+      "id": "cs-mcp",
+      "name": "CortexOS MCP 接入层",
+      "url": "https://github.com/cortexos-dev/cs-mcp",
+      "position": "CortexOS 的 MCP 接入层：探测本机 CLI，把工具能力注册成 MCP 分组供 AI 客户端调用。",
+      "logoSource": "cs-app/client/design/logo"
+    },
+    {
+      "id": "cs-app",
+      "name": "CortexOS 工作台（手机端）",
+      "url": "https://github.com/cortexos-dev/cs-app",
+      "position": "手机端工作台：随身查看任务进展、收发消息与指令，桌面端能力的移动入口。",
+      "logoSource": "cs-app/client/design/logo"
     }
-  ]
+  ],
+  "logoSourceStatement": "三个产品共用同一套标记，logo 真源在 cs-app/client/design/logo（logo-mark.svg + build_logo.py），本仓 brand/ 下的素材均为其应用版本。",
+  "assets": {
+    "mark": "brand/mark.svg —— 浅底透明标识，108×108 栅格",
+    "markDark": "brand/mark-dark.svg —— 深底版（莫兰迪玻璃底 + 内缩标记）",
+    "avatar": "brand/avatar.svg · brand/avatar.png（1024×1024）—— GitHub 组织头像",
+    "hero": "brand/hero.svg · brand/hero.png（1280×360）—— 组织首页横幅"
+  }
 }

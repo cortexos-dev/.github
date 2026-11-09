@@ -13,6 +13,16 @@
   <a href="https://github.com/cortexos-dev/cs-mcp/issues">反馈与建议</a>
 </p>
 
+### 三个产品
+
+| 产品 | 定位 |
+| --- | --- |
+| **[cs-ui-web](https://github.com/cortexos-dev/cs-ui-web)** | 电脑端工作台（网页 + Mac app）：Agent 与人共用的控制面，任务、看板与消息在同一处收敛 |
+| **[cs-mcp](https://github.com/cortexos-dev/cs-mcp)** | CortexOS 的 MCP 接入层：探测本机 CLI，把工具能力注册成 MCP 分组供 AI 客户端调用 |
+| **[cs-app](https://github.com/cortexos-dev/cs-app)** | 手机端工作台：随身查看任务进展、收发消息与指令，桌面端能力的移动入口 |
+
+三端共用同一套标记，**logo 真源在 [`cs-app/client/design/logo`](https://github.com/cortexos-dev/cs-app)**（`logo-mark.svg` + `build_logo.py`）。
+
 ### 从工具接入开始
 
 CortexOS 以 CLI 为基础，让 AI Agent 使用已有工具处理真实工作。MCP 为支持该协议的客户端提供统一入口；具体能力仍由各工具自己的 CLI 实现。
@@ -43,6 +53,17 @@ claude mcp add cs -- ~/.local/bin/cs-mcp
 
 完整安装与配置：[中文文档](https://github.com/cortexos-dev/cs-mcp#readme) · [English](https://github.com/cortexos-dev/cs-mcp/blob/main/README.en.md)
 
+### 品牌素材
+
+组织标识、头像与横幅的完整说明见 [brand/README.md](https://github.com/cortexos-dev/.github/blob/main/brand/README.md)，颜色与来源记录见 [brand/manifest.json](https://github.com/cortexos-dev/.github/blob/main/brand/manifest.json)。
+
+| 用途 | 素材 |
+| --- | --- |
+| 浅底透明标识 | [mark.svg](https://raw.githubusercontent.com/cortexos-dev/.github/main/brand/mark.svg) |
+| 深底标识 | [mark-dark.svg](https://raw.githubusercontent.com/cortexos-dev/.github/main/brand/mark-dark.svg) |
+| 组织头像 1024×1024 | [avatar.png](https://raw.githubusercontent.com/cortexos-dev/.github/main/brand/avatar.png) |
+| 首页横幅 1280×360 | [hero.png](https://raw.githubusercontent.com/cortexos-dev/.github/main/brand/hero.png) |
+
 ---
 
-<sub>CortexOS 由 <a href="https://github.com/webkubor">webkubor</a> 维护。当前公开入口为 cs-mcp；其他组件仍在内部迭代。</sub>
+<sub>CortexOS 由 <a href="https://github.com/webkubor">webkubor</a> 维护。cs-mcp 目前是公开入口，其他组件仍在内部迭代。</sub>

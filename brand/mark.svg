@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="CortexOS"><title>CortexOS mark</title><path d="M62 108C66 68 102 40 148 40C182 40 208 58 222 84C214 88 202 90 192 84C180 66 162 58 144 58C114 58 88 78 82 108Z" fill="#0284C7"/><path d="M222 84C230 114 226 154 198 184C172 212 134 220 96 212C102 198 114 190 126 194C150 198 176 192 192 172C210 148 212 118 204 94Z" fill="#1D4ED8"/><path d="M96 212C60 200 36 166 36 128C36 100 48 76 68 58C74 68 84 76 78 88C66 100 56 114 56 128C56 156 74 182 104 192Z" fill="#2563EB"/><circle cx="128" cy="128" r="15" fill="#1D4ED8"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">CortexOS 标记</title>
+  <desc id="desc">三段互不相接的莫兰迪弧线围绕一个近白核心；与 CortexOS 手机端标识同形同色。</desc>
+  <g transform="translate(54,54) scale(1.25) translate(-54,-54)">
+  <path d="M 45.5,54 A 8.5,8.5 0 1 1 62.5,54 A 8.5,8.5 0 1 1 45.5,54" fill="#EFF4F7"/>
+  <path d="M 40.155,36.9028 A 22,22 0 0 1 67.845,36.9028" fill="none" stroke="#B5B8AF" stroke-width="10.5" stroke-linecap="round"/>
+  <path d="M 75.7291,50.5584 A 22,22 0 0 1 61.8841,74.5388" fill="none" stroke="#C4B4A4" stroke-width="10.5" stroke-linecap="round"/>
+  <path d="M 46.1159,74.5388 A 22,22 0 0 1 32.2709,50.5584" fill="none" stroke="#C1B5B3" stroke-width="10.5" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,8 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-label="CortexOS — An operating layer for agents and tools">
-<title>CortexOS — An operating layer for agents and tools</title>
-<rect width="1280" height="360" rx="24" fill="#0D1117"/>
-<g transform="translate(70 52)"><path d="M62 108C66 68 102 40 148 40C182 40 208 58 222 84C214 88 202 90 192 84C180 66 162 58 144 58C114 58 88 78 82 108Z" fill="#38BDF8"/><path d="M222 84C230 114 226 154 198 184C172 212 134 220 96 212C102 198 114 190 126 194C150 198 176 192 192 172C210 148 212 118 204 94Z" fill="#3B82F6"/><path d="M96 212C60 200 36 166 36 128C36 100 48 76 68 58C74 68 84 76 78 88C66 100 56 114 56 128C56 156 74 182 104 192Z" fill="#60A5FA"/><circle cx="128" cy="128" r="15" fill="#F8FAFC"/></g>
-<text x="390" y="145" fill="#F8FAFC" font-family="Helvetica,Arial,sans-serif" font-size="60" font-weight="700" letter-spacing="-2">CortexOS</text>
-<text x="393" y="198" fill="#CBD5E1" font-family="Helvetica,Arial,sans-serif" font-size="23">An operating layer for agents and tools.</text>
-<text x="393" y="254" fill="#60A5FA" font-family="Helvetica,Arial,sans-serif" font-size="15" letter-spacing="2">CLI-FIRST  /  MCP-COMPATIBLE</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">CortexOS — An operating layer for agents and tools</title>
+  <desc id="desc">莫兰迪三弧标记与 CortexOS 字标，深色玻璃底。</desc>
+  <defs>
+  <linearGradient id="gBase" x1="0.14" y1="0" x2="0.74" y2="1">
+    <stop offset="0" stop-color="#3C474F"/>
+    <stop offset="0.55" stop-color="#3D4148"/>
+    <stop offset="1" stop-color="#343E3F"/>
+  </linearGradient>
+  <radialGradient id="gPetal" cx="0.9" cy="0.02" r="0.3">
+    <stop offset="0" stop-color="#C4A8A4" stop-opacity="0.4"/>
+    <stop offset="1" stop-color="#C4A8A4" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gSage" cx="0.03" cy="1.0" r="0.4">
+    <stop offset="0" stop-color="#A8B09A" stop-opacity="0.34"/>
+    <stop offset="1" stop-color="#A8B09A" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="gSpecular" x1="0.04" y1="0" x2="0.62" y2="0.86">
+    <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.24"/>
+    <stop offset="0.34" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+  </linearGradient>
+  </defs>
+  <rect width="1280" height="360" rx="24" fill="url(#gBase)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#gPetal)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#gSage)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#gSpecular)"/>
+  <g transform="translate(64 48) scale(1.1)">
+  <g transform="translate(54,54) scale(1.25) translate(-54,-54)">
+  <path d="M 45.5,54 A 8.5,8.5 0 1 1 62.5,54 A 8.5,8.5 0 1 1 45.5,54" fill="#EFF4F7"/>
+  <path d="M 40.155,36.9028 A 22,22 0 0 1 67.845,36.9028" fill="none" stroke="#B5B8AF" stroke-width="10.5" stroke-linecap="round"/>
+  <path d="M 75.7291,50.5584 A 22,22 0 0 1 61.8841,74.5388" fill="none" stroke="#C4B4A4" stroke-width="10.5" stroke-linecap="round"/>
+  <path d="M 46.1159,74.5388 A 22,22 0 0 1 32.2709,50.5584" fill="none" stroke="#C1B5B3" stroke-width="10.5" stroke-linecap="round"/>
+  </g>
+  </g>
+  <text x="240" y="160" fill="#F4F7F8" font-family="Helvetica,Arial,sans-serif" font-size="62" font-weight="700" letter-spacing="-2">CortexOS</text>
+  <text x="243" y="212" fill="#C7CDCF" font-family="Helvetica,Arial,sans-serif" font-size="23">An operating layer for agents and tools.</text>
+  <text x="243" y="266" fill="#B5B8AF" font-family="Helvetica,Arial,sans-serif" font-size="15" letter-spacing="2">CLI-FIRST  /  MCP-COMPATIBLE</text>
 </svg>
