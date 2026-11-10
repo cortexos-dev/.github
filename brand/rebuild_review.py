@@ -53,7 +53,7 @@ def svg_asset(name):
         "validation": {
             "format": "SVG",
             "viewBox": svg_viewbox(text),
-            "checks": "结构合法（XML 可解析）、无外部引用、路径与配色逐条比对主仓 docs/manifest/branding/breakout.svg 一致；已用 rsvg-convert 实际渲染",
+            "checks": "结构合法（XML 可解析）、无外部引用、无 text/font-family 依赖；路径与配色逐条比对主仓 docs/manifest/branding/breakout.svg 与 lockup-dark.svg 一致；已用 rsvg-convert 实际渲染",
         },
         "limitation": "结构与渲染已验证；16px 最小尺寸、色觉模拟与任意彩色底未验收。",
     }

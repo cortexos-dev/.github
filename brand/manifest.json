@@ -58,6 +58,15 @@
     "mark": "brand/mark.svg —— 浅底透明标识，200×200 栅格",
     "markDark": "brand/mark-dark.svg —— 深底版（深色底板 + 内缩标记）",
     "avatar": "brand/avatar.svg · brand/avatar.png（1024×1024）—— GitHub 组织头像",
-    "hero": "brand/hero.svg · brand/hero.png（1280×360）—— 组织首页横幅"
+    "hero": "brand/hero.svg · brand/hero.png（1280×360）—— 组织首页横幅（深底 + 出框标志 + Inter 路径字标）"
+  },
+  "typography": {
+    "wordmark": "「CortexOS」字标由 Inter Latin SemiBold 转成 SVG 路径，不依赖查看者的系统字体；深底版的 OS 用提亮紫 #A99AFF→#B4A8FF 改善小字对比。",
+    "source": "CortexOS 主仓 docs/manifest/branding/lockup-dark.svg（700×220）",
+    "sourceCommit": "0d52b0f",
+    "font": "Inter Latin SemiBold（OFL 许可，副本见 brand/branding-source/fonts/）",
+    "letterSpacing": "字标按字体 advance 固定收紧 2 单位排字，不用字偶距；因此与浏览器直接排版的 Inter 并非完全相同。",
+    "banner": "brand/hero.svg 的字标整段搬自 lockup-dark.svg（不重画、不改色不改几何），副标题用同一份 Inter 转路径；整个横幅不含 text 元素与 font-family 引用。",
+    "generator": "brand/build_hero.py（需要 fontTools[woff] 与 rsvg-convert）"
   }
 }

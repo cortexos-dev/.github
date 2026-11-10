@@ -25,6 +25,15 @@
 - 越界块：`rect` 从开口伸出边界，是画面里唯一的强调色
 - 栅格：200 × 200，`viewBox 0 0 200 200`
 
+## 字标
+
+「CortexOS」字标由 **Inter Latin SemiBold 转成 SVG 路径**，不依赖查看者的系统字体——换一台没装 Inter 的机器，字形不会走样。
+
+- 真源：CortexOS 主仓 `docs/manifest/branding/lockup-dark.svg`（700 × 220，合入提交 `0d52b0f`）
+- 本仓副本：[branding-source/](branding-source/)（含 Inter-Latin-600.woff2 与 OFL 许可）
+- 深底版的 `OS` 用提亮紫 `#A99AFF` → `#B4A8FF`，改善深底上的小字对比
+- 字标按字体 advance 固定收紧 2 单位排字（不用字偶距），因此与浏览器直接排版的 Inter 并非完全相同
+
 ## 配色
 
 | 用途 | 色值 | 角色 |
@@ -33,13 +42,26 @@
 | 越界块渐变 | `#5EEAD4` → `#22D3EE` | 唯一的强调色，小面积高饱和，只标出越界那一块 |
 | 浅底文字 | `#14151B` | 横版字标文字色 |
 | 深底文字 | `#F4F5F8` | 深底横版字标文字色 |
+| 深底字标 OS | `#A99AFF` → `#B4A8FF` | 深底版的提亮紫，改善小字对比 |
 | 深底板 | `#0B0C10` | 深底应用（mark-dark / avatar / hero）底板 |
+
+## 横幅
+
+`hero.svg`（1280 × 360）= 深底板 + 出框标志 + Inter 路径字标 + 副标题。
+
+- 字标整段搬自 `lockup-dark.svg`，**不重画、不改色、不改几何**
+- 副标题「An operating layer for agents and tools.」用同一份 Inter 转路径，
+  23px、正常字距（0），左边与字标起点对齐（真源里字标首字起点 x=240），置于字标下方、不压标志
+- 整个横幅不含 `text` / `tspan` 元素，也不含 `font-family` 引用 → 跨系统渲染一致
+- 重新生成：`/tmp/fontenv/bin/python brand/build_hero.py`（需要 fontTools[woff] 与 rsvg-convert）
 
 ## 验收状态
 
 - 已用 rsvg-convert 实际渲染 32 / 64 / 128 / 512 / 1024px，检查透明角块、包围盒与留白
 - 浅底 `#FFFFFF` 与深底 `#0B0C10` 下的 32px 均已实际查看，结构可辨
 - 已过视觉模型盲审：未被识别为常见通用图标件，24px 可辨主结构，换名测试不成立
+- 横幅：XML 合法；真源 10 个图元在 hero 中零缺失；全部渐变 id 与色值原样保留；
+  标志与字标按 hero 的变换对齐后逐像素比对，差异 1.9%（仅缩放重采样舍入）；
+  Chrome headless 实际渲染已看图确认
 - 16px 最小尺寸、纹理底、任意彩色底与色觉模拟未验收
 - 设备图标适配（圆角方底板 / Android adaptive / iOS）与跨端发布未完成，需各自验证
-- 横幅中的文字随 SVG 渲染，跨平台字体差异未单独处理
