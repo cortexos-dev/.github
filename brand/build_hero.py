@@ -8,7 +8,8 @@
     Inter 字体转成路径（真源 README 明确要求不依赖运行时字体）
 
 用法（在仓根跑）：
-    /tmp/fontenv/bin/python brand/build_hero.py
+    python3 -m pip install 'fonttools[woff]'
+    python3 brand/build_hero.py
 
 需要 fontTools（'fonttools[woff]'）与 rsvg-convert。
 """

@@ -53,7 +53,7 @@
 - 副标题「An operating layer for agents and tools.」用同一份 Inter 转路径，
   23px、正常字距（0），左边与字标起点对齐（真源里字标首字起点 x=240），置于字标下方、不压标志
 - 整个横幅不含 `text` / `tspan` 元素，也不含 `font-family` 引用 → 跨系统渲染一致
-- 重新生成：`/tmp/fontenv/bin/python brand/build_hero.py`（需要 fontTools[woff] 与 rsvg-convert）
+- 重新生成：先 `python3 -m pip install 'fonttools[woff]'`，再 `python3 brand/build_hero.py`（需要 rsvg-convert）
 
 ## 验收状态
 
