@@ -1,10 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108" role="img" aria-labelledby="title desc">
-  <title id="title">CortexOS 标记</title>
-  <desc id="desc">三段互不相接的莫兰迪弧线围绕一个近白核心；与 CortexOS 手机端标识同形同色。</desc>
-  <g transform="translate(54,54) scale(1.25) translate(-54,-54)">
-  <path d="M 45.5,54 A 8.5,8.5 0 1 1 62.5,54 A 8.5,8.5 0 1 1 45.5,54" fill="#EFF4F7"/>
-  <path d="M 40.155,36.9028 A 22,22 0 0 1 67.845,36.9028" fill="none" stroke="#B5B8AF" stroke-width="10.5" stroke-linecap="round"/>
-  <path d="M 75.7291,50.5584 A 22,22 0 0 1 61.8841,74.5388" fill="none" stroke="#C4B4A4" stroke-width="10.5" stroke-linecap="round"/>
-  <path d="M 46.1159,74.5388 A 22,22 0 0 1 32.2709,50.5584" fill="none" stroke="#C1B5B3" stroke-width="10.5" stroke-linecap="round"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="title">
+  <title id="title">CortexOS 出框标志</title>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+    <linearGradient id="breakout" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5EEAD4"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+  </defs>
+  <path fill-rule="evenodd" fill="url(#frame)" d="M20 20 H180 V72 H152 V48 H48 V152 H152 V128 H180 V180 H20 Z"/>
+  <rect x="100" y="78" width="80" height="44" rx="4" fill="url(#breakout)"/>
 </svg>

@@ -1,45 +1,45 @@
 # CortexOS brand assets
 
-组织品牌素材。**形状与配色不是另起炉灶的设计稿**——唯一真源是 CortexOS 手机端（cs-app）的标识资产：
+组织品牌素材。标志本体来自 CortexOS 主仓的标志真源：
 
-- 标记本体：`cs-app/client/design/logo/logo-mark.svg`
-- 深底版：`cs-app/client/design/logo/adaptive-foreground.svg` + `adaptive-background.svg`
-- 生成源：`cs-app/client/design/logo/build_logo.py`（几何与配色的唯一出处）
-- 配色出处：`cs-app/client/lib/theme.dart` 的 `AppTokens`
+- **`docs/manifest/branding/breakout.svg`**（CortexOS 主仓，已合并 `a4c266d`）—— 「出框」标志
+- 源形稿：`logo-brand-designer` skill 的 `examples/cortexos/breakout`（用户选定方向）
+- 元数据：主仓 `docs/manifest/branding.json`
 
-本目录的每个文件都是上述资产的应用版本。改形状或配色要先改 cs-app 真源并重跑 `build_logo.py`，再同步到这里——否则三端会漂移。
+本目录的每个文件都是该标志的应用版本。改形状或配色要先改主仓真源，再同步到这里——否则各端会漂移。
 
 | 用途 | 素材 |
 | --- | --- |
 | 浅色背景中的透明标识 | [mark.svg](mark.svg) |
-| 深色背景中的标识（莫兰迪玻璃底） | [mark-dark.svg](mark-dark.svg) |
+| 深色背景中的标识（深色底板） | [mark-dark.svg](mark-dark.svg) |
 | GitHub 组织头像，1024 × 1024 | [avatar.png](avatar.png) · [SVG](avatar.svg) |
 | GitHub 首页横幅，1280 × 360 | [hero.png](hero.png) · [SVG](hero.svg) |
 | 主题与尺寸离线预览 | 下载后打开 [review.html](review.html) |
 | 颜色、来源与设计记录 | [manifest.json](manifest.json) |
 
-## 标记
+## 标志：出框
 
-中心核 + 三段互不相接的弧，120° 旋转对称，三段之间各留 42° 缺口（缩到 24px 缺口仍能分开）。108 单位品牌栅格，中心 (54, 54)；核心半径 8.5、弧半径 22、弧宽 10.5。
+粗框围出一个空间，核心块从右侧开口处穿出去——**掌控与越界同时成立**。
+
+- 框：`fill-rule=evenodd` 一次画出外框与内框，右侧留出开口
+- 越界块：`rect` 从开口伸出边界，是画面里唯一的强调色
+- 栅格：200 × 200，`viewBox 0 0 200 200`
 
 ## 配色
 
-莫兰迪三色，来源是 `AppTokens` 的可读轨朝白提亮 0.52 的实算结果：
-
-| 用途 | 色值 | 来源 |
+| 用途 | 色值 | 角色 |
 | --- | --- | --- |
-| 核心 | `#EFF4F7` | 标识专用近白核心色 |
-| 鼠尾草弧 | `#B5B8AF` | `AppTokens.sage.readable`（#656C58）提亮 0.52 |
-| 陶土弧 | `#C4B4A4` | `AppTokens.clay.readable`（#856341）提亮 0.52 |
-| 藕粉弧 | `#C1B5B3` | `AppTokens.petal.readable`（#7D6460）提亮 0.52 |
-
-深底版本沿用 `adaptive-background.svg` 的莫兰迪玻璃渐变（`#3C474F` / `#3D4148` / `#343E3F` 基底 + 藕粉与鼠尾草的低 alpha 氛围光）。
-
-`AppTokens` 的双轨制在标识里也成立：弧与核心是「图标」，走可读轨；底面是「氛围渐变」，走气质轨（pigment 低 alpha 叠加）。
+| 框渐变 | `#4F46E5` → `#7C3AED` | 品牌主色，靛蓝到紫，承载「空间 / 结构」 |
+| 越界块渐变 | `#5EEAD4` → `#22D3EE` | 唯一的强调色，小面积高饱和，只标出越界那一块 |
+| 浅底文字 | `#14151B` | 横版字标文字色 |
+| 深底文字 | `#F4F5F8` | 深底横版字标文字色 |
+| 深底板 | `#0B0C10` | 深底应用（mark-dark / avatar / hero）底板 |
 
 ## 验收状态
 
 - 已用 rsvg-convert 实际渲染 32 / 64 / 128 / 512 / 1024px，检查透明角块、包围盒与留白
-- 标记路径与配色已与 `cs-app/client/design/logo/logo-mark.svg` 逐条比对一致
-- 16px 最小尺寸、色觉模拟与任意彩色底未验收
+- 浅底 `#FFFFFF` 与深底 `#0B0C10` 下的 32px 均已实际查看，结构可辨
+- 已过视觉模型盲审：未被识别为常见通用图标件，24px 可辨主结构，换名测试不成立
+- 16px 最小尺寸、纹理底、任意彩色底与色觉模拟未验收
+- 设备图标适配（圆角方底板 / Android adaptive / iOS）与跨端发布未完成，需各自验证
 - 横幅中的文字随 SVG 渲染，跨平台字体差异未单独处理

@@ -30,6 +30,16 @@ def data_uri(name, mime):
         return "data:%s;base64,%s" % (mime, base64.b64encode(f.read()).decode())
 
 
+def svg_viewbox(text):
+    """从 SVG 文本里读 viewBox —— 品牌栅格会随定稿变化，写死数值就会与实际素材不符。"""
+    import re as _re
+
+    m = _re.search(r'viewBox="([\d.\s-]+)"', text)
+    if not m:
+        return None
+    return [float(x) for x in m.group(1).split()]
+
+
 def svg_asset(name):
     text = svg_text(name)
     return {
@@ -42,12 +52,8 @@ def svg_asset(name):
         "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
         "validation": {
             "format": "SVG",
-            "viewBox": [0.0, 0.0, 108.0, 108.0]
-            if name.startswith("mark")
-            else [0.0, 0.0, 512.0, 512.0]
-            if name.startswith("avatar")
-            else [0.0, 0.0, 1280.0, 360.0],
-            "checks": "结构合法（XML 可解析）、无外部引用、路径与配色逐条比对 cs-app logo-mark.svg 一致；已用 rsvg-convert 实际渲染",
+            "viewBox": svg_viewbox(text),
+            "checks": "结构合法（XML 可解析）、无外部引用、路径与配色逐条比对主仓 docs/manifest/branding/breakout.svg 一致；已用 rsvg-convert 实际渲染",
         },
         "limitation": "结构与渲染已验证；16px 最小尺寸、色觉模拟与任意彩色底未验收。",
     }
@@ -87,29 +93,30 @@ def main():
         "id": "cortexos",
         "name": "CortexOS · 组织品牌",
         "tokens": tokens,
-        "tokenSources": manifest["tokenSources"],
+        "tokenSources": manifest.get("colorRoles", {}),
         "rationale": [
-            "形态与配色取自 CortexOS 手机端标识资产（cs-app/client/design/logo），不是另起炉灶的设计稿。",
-            "中心核 + 三段互不相接的弧，120° 旋转对称，三段间留 42° 缺口。",
-            "弧色是 AppTokens 可读轨朝白提亮 0.52 的实算结果（build_logo.py 的 ARC_LIFT）。",
+            "形态与配色取自 CortexOS 主仓的标志真源 docs/manifest/branding/breakout.svg，不是另起炉灶的设计稿。",
+            "粗框围出一个空间，核心块从右侧开口处穿出去——掌控与越界同时成立。",
+            "框用 fill-rule=evenodd 一次画出外框与内框；越界块是画面里唯一的强调色。",
         ],
         "userDecisions": [
-            "owner 2026-11-09 拍板：组织门面与手机 APP 用同一套标记，GitHub 组织仓的旧蓝色三弧作废。",
+            "用户选定「出框」方向（logo-brand-designer skill 的 examples/cortexos/breakout），替换先前的三弧方案。",
         ],
         "recommendations": [
-            "浅底用 mark.svg（透明底），深底用 mark-dark.svg（莫兰迪玻璃底）。",
+            "浅底用 mark.svg（透明底），深底用 mark-dark.svg（深色底板）。",
             "16px 最小尺寸、色觉模拟与任意彩色底尚未验收。",
+            "设备图标适配与跨端发布需各自验证。",
         ],
         "sources": [
             {
-                "url": "https://github.com/cortexos-dev/cs-app",
-                "label": "产品真源：cs-app/client/design/logo（logo-mark.svg + build_logo.py）",
-                "value": "https://github.com/cortexos-dev/cs-app",
+                "url": "https://gitlab.com/webkubor/CortexOS/-/blob/main/docs/manifest/branding/breakout.svg",
+                "label": "标志真源：CortexOS 主仓 docs/manifest/branding/breakout.svg",
+                "value": "https://gitlab.com/webkubor/CortexOS/-/blob/main/docs/manifest/branding/breakout.svg",
             },
             {
-                "url": "https://github.com/cortexos-dev/cs-app/blob/main/client/lib/theme.dart",
-                "label": "配色真源：AppTokens（theme.dart）",
-                "value": "https://github.com/cortexos-dev/cs-app/blob/main/client/lib/theme.dart",
+                "url": "https://github.com/webkubor/logo-brand-designer/tree/6c0f403/examples/cortexos/breakout",
+                "label": "源形稿：logo-brand-designer skill 的 breakout 方案",
+                "value": "https://github.com/webkubor/logo-brand-designer/tree/6c0f403/examples/cortexos/breakout",
             },
         ],
         "assets": assets,

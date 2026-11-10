@@ -21,7 +21,7 @@
 | **[cs-mcp](https://github.com/cortexos-dev/cs-mcp)** | CortexOS 的 MCP 接入层：探测本机 CLI，把工具能力注册成 MCP 分组供 AI 客户端调用 |
 | **[cs-app](https://github.com/cortexos-dev/cs-app)** | 手机端工作台：随身查看任务进展、收发消息与指令，桌面端能力的移动入口 |
 
-三端共用同一套标记，**logo 真源在 [`cs-app/client/design/logo`](https://github.com/cortexos-dev/cs-app)**（`logo-mark.svg` + `build_logo.py`）。
+三端共用同一套标记——**「出框」标志**：粗框围出一个空间，核心从开口处穿出去，掌控与越界同时成立。标志真源在 CortexOS 主仓 [`docs/manifest/branding/breakout.svg`](https://gitlab.com/webkubor/CortexOS/-/blob/main/docs/manifest/branding/breakout.svg)，本仓 `brand/` 下是它的应用版本。
 
 ### 从工具接入开始
 
