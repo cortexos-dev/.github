@@ -104,15 +104,20 @@ def build():
     # 副标题排在字标**正下方**，左边与字标起点对齐（真源里字标第一个字形起点
     # 是 x=240，见 lockup-dark.svg 的 translate(240.0000 142)）。字号 23、
     # 正常字距（0，不用字标的 -2 收紧——那是给大字标题排的，副标题用会挤）。
-    # 基线是 SVG 坐标（y 向下）：取字标底部之下，保证不压标志。
+    #
+    # 基线按**字形实际边界**算，不按 lockup 画布高度（220）：画布底部有大片
+    # 空白——字标实际只占真源内 y=71..143（基线 142，descender 到 143），
+    # 按画布排会把副标题甩到画面底部（实测基线曾落在 y=308，与字标相距
+    # 113px，视觉脱节）。字标实际底缘在 hero 内 = 46 + 143.1*1.05 ≈ 196。
     tagline_scale = 23 / font["head"].unitsPerEm
     wordmark_x = lockup_x + 240 * lockup_scale
+    wordmark_bottom = lockup_y + 143.1 * lockup_scale  # ≈ 196
     tagline_paths, _ = glyph_paths(
         font,
         TAGLINE,
         tagline_scale,
         wordmark_x,
-        lockup_y + 220 * lockup_scale + 30,
+        wordmark_bottom + 44,
         TAGLINE_FILL,
         letter_gap=0.0,
     )
